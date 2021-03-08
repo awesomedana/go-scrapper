@@ -1,18 +1,28 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
-func lenAndUpper(name string) (length int, uppercase string) {
-	defer fmt.Println("I'm done.") // defer는 func이 리턴한 후에 실행된다!
-	length = len(name)
-	uppercase = strings.ToUpper(name)
-	return // naked return: 리턴 뒤에 변수를 지정해주지 않아도 된다!
+func superAdd(numbers ...int) int {
+	// for문 기본형
+	// for i := 0; i < len(numbers); i++ {
+	// 	fmt.Println(numbers[i])
+	// }
+	// return 1
+
+	// range는 index를 사용함
+	// for index, number := range numbers {
+	// 	fmt.Println(index, number)
+	// }
+	// return 1
+
+	total := 0
+	for _, number := range numbers {
+		total += number
+	}
+	return total
 }
 
 func main() {
-	totalLength, up := lenAndUpper("hayeon")
-	fmt.Println(totalLength, up)
+	result := superAdd(1, 2, 3, 4, 5, 6)
+	fmt.Println(result)
 }

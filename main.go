@@ -3,10 +3,23 @@ package main
 import "fmt"
 
 func canIDrink(age int) bool {
-	if koreanAge := age + 2; koreanAge < 18 { // if문의 조건문 안에서 변수를 만들 수 있다! (단, if문 안에서만 사용한다)
+	// switch문
+	// switch {
+	// case age < 18:
+	// 	return false
+	// case age == 18:
+	// 	return true
+	// }
+	// return false
+
+	// 변수를 생성하는 switch문
+	switch koreanAge := age + 2; koreanAge {
+	case 10:
 		return false
+	case 18:
+		return true
 	}
-	return true
+	return false
 }
 
 func main() {

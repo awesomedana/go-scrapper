@@ -2,27 +2,13 @@ package main
 
 import "fmt"
 
-func superAdd(numbers ...int) int {
-	// for문 기본형
-	// for i := 0; i < len(numbers); i++ {
-	// 	fmt.Println(numbers[i])
-	// }
-	// return 1
-
-	// range는 index를 사용함
-	// for index, number := range numbers {
-	// 	fmt.Println(index, number)
-	// }
-	// return 1
-
-	total := 0
-	for _, number := range numbers {
-		total += number
+func canIDrink(age int) bool {
+	if koreanAge := age + 2; koreanAge < 18 { // if문의 조건문 안에서 변수를 만들 수 있다! (단, if문 안에서만 사용한다)
+		return false
 	}
-	return total
+	return true
 }
 
 func main() {
-	result := superAdd(1, 2, 3, 4, 5, 6)
-	fmt.Println(result)
+	fmt.Println(canIDrink(16))
 }

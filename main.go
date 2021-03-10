@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/awesomedana/go-scrapper/accounts"
+)
 
 func main() {
-	fmt.Println()
+	account := accounts.NewAccount("dana")
+	fmt.Println(account)
 }

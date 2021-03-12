@@ -1,6 +1,9 @@
 package accounts
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // Account struct (Account로 시작하는 코멘트가 있어야 error가 뜨지 않는다.)
 type Account struct {
@@ -34,4 +37,18 @@ func (a *Account) Withdraw(amount int) error {
 	}
 	a.balance -= amount
 	return nil
+}
+
+// ChangeOwner of the account
+func (a *Account) ChangeOwner(newOwner string) {
+	a.owner = newOwner
+}
+
+// Owner of the account
+func (a Account) Owner() string {
+	return a.owner
+}
+
+func (a Account) String() string {
+	return fmt.Sprint(a.Owner(), "'s account. \nHas: ", a.Balance())
 }
